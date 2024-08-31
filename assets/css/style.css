@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+.contacto {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.nav {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  grid-area: nav;
+  background-color: rgb(30, 31, 36);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.logo {
+  width: 50px;
+}
+
+.main-container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr auto 1fr;
+  grid-template-areas:
+    "nav"
+    "filtro"
+    "principal"
+    "pie";
+}
+
+.navright {
+  margin-right: 10px;
+
+}
+.filtrobusqueda img {
+
+  width: 100%; 
+
+  object-fit: cover; 
+  filter: blur(2px);
+  margin-top: 80px;
+}
+.texto-sobre-imagen {
+  position: absolute; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: white; 
+  text-align: center; 
+  padding: 20px; 
+  background: rgba(0, 0, 0, 0.5); 
+}
+.filtrobusqueda {
+  position: relative;
+}
+
+.fa-instagram {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: white;
+}
+.fa-facebook {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: white;
+}
+.seccionprincipal {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: black;
+  grid-area: principal;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.piepagina {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  grid-area: pie;
+  background-color: rgb(2, 2, 3);
+  padding: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.social-icons i {
+  font-size: 1.5rem;
+}
+
+.btncomprar {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: rgb(67, 67, 75);
+  width: 20%;
+  color: white;
+  justify-content: space-between;
+  border: 0;
+  padding: 0.5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 40%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.card img:hover {
+  width: 40%;
+  height: auto;
+  filter: grayscale(0%);
+}
+
+/* .seccionprincipal {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  flex: 1;
+  padding: 10px;
+} */
+.btncomprar:hover {
+  background-color: rgb(255, 102, 0);
+  width: 20%;
+  color: white;
+  justify-content: space-between;
+  border: 0;
+  padding: 0.5rem;
+  margin-top: px;
+  margin-bottom: 5px;
+
+}
+.texto-sobre-imagen {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 576px) {
+  .contacto {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .logo {
+    width: 60px;
+  }
+  .main-container {
+      /* height: 100vh; */
+    grid-template-columns: 1fr, 7fr;
+    grid-template-rows: 100% 50% 20%;
+    grid-template-areas:
+      "nav filtro"
+      "nav principal"
+      "pie pie";
+  }
+  .filtrobusqueda img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+  }
+  .seccionprincipal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .piepagina {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    grid-area: pie;
+    background-color: rgb(2, 2, 3);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .card {
+    margin-top: 0;
+  }
+  .navright {
+    display: none;
+  }
+  .nav {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100px;
+    z-index: 1000;
+
+  }
+  .nav p:active {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: rgb(255, 60, 0);
+  }
+  .btncomprar {
+    background-color: rgb(30, 30, 39);
+    width: 50%;
+    color: white;
+    justify-content: space-between;
+    border: 0;
+    padding: 0.5rem;
+    margin-top: px;
+    margin-bottom: 5px;
+  }
+  .btncomprar:hover {
+    background-color: rgb(255, 102, 0);
+    width: 50%;
+    color: white;
+    justify-content: space-between;
+    border: 0;
+    padding: 0.5rem;
+    margin-top: px;
+    margin-bottom: 5px; }
+
+
+
+  .opciones_cabecera {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+  }
+  .card img:hover {
+    width: 100%;
+    height: auto;
+    filter: grayscale(0%);
+  }
+}
